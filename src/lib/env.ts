@@ -1,4 +1,18 @@
+const ALLOWED_FORM_HOSTS = ["docs.google.com", "forms.gle"];
+
+function sanitizeFormUrl(raw: string | undefined): string {
+  if (!raw) return "";
+  try {
+    const url = new URL(raw);
+    if (url.protocol !== "https:") return "";
+    if (!ALLOWED_FORM_HOSTS.includes(url.hostname)) return "";
+    return url.toString();
+  } catch {
+    return "";
+  }
+}
+
 export const formUrls = {
-  team: process.env.NEXT_PUBLIC_FORM_TEAM_URL ?? "",
-  solo: process.env.NEXT_PUBLIC_FORM_SOLO_URL ?? "",
+  team: sanitizeFormUrl(process.env.NEXT_PUBLIC_FORM_TEAM_URL),
+  solo: sanitizeFormUrl(process.env.NEXT_PUBLIC_FORM_SOLO_URL),
 } as const;

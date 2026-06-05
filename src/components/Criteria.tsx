@@ -54,7 +54,7 @@ export function Criteria() {
                           ease: [0.21, 0.6, 0.35, 1],
                           delay: 0.1 + i * 0.05,
                         }}
-                        className="h-full rounded-full bg-gradient-to-r from-indigo-600 via-violet-500 to-amber-500"
+                        className="h-full rounded-full bg-gradient-to-r from-[color:var(--accent)] via-[color:var(--accent-pressed)] to-[color:var(--text-primary)]"
                       />
                     </div>
                   </div>

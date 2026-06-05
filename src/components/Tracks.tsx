@@ -64,7 +64,7 @@ export function Tracks() {
                 className="group relative flex flex-col rounded-2xl border border-border bg-white p-6 transition-all hover:border-ink/30 hover:shadow-[0_8px_30px_-12px_rgba(11,11,20,0.18)]"
               >
                 <div className="flex items-start justify-between">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand transition-colors group-hover:bg-brand group-hover:text-white [&>svg]:h-6 [&>svg]:w-6">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-ink transition-colors group-hover:bg-brand group-hover:text-[color:var(--accent-text)] [&>svg]:h-6 [&>svg]:w-6">
                     {icons[t.id]}
                   </div>
                   <span className="text-xs font-medium uppercase tracking-[0.16em] text-muted">

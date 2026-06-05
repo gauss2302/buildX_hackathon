@@ -63,8 +63,8 @@ export function AnimatedX({ className = "" }: Props) {
       const innerR = 0.08;
       const glowR = 0.2;
 
-      // Saturated colors that pop on a light background.
-      const colors = ["#4f46e5", "#f59e0b"]; // indigo-600, amber-500
+      // Brand accent + slate for contrast on the light app background.
+      const colors = ["#aed500", "#1f2937"]; // --accent, --text-primary
       const slope = Math.atan2(halfH, halfW);
       const angles = [slope, -slope]; // "/" and "\"
       const groups: import("three").Group[] = [];

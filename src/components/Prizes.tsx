@@ -15,7 +15,7 @@ export function Prizes() {
             <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-white via-white to-brand-soft p-8 sm:p-10">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-indigo-400/20 via-violet-400/20 to-amber-400/20 blur-3xl"
+                className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-[color:var(--accent)]/30 via-[color:var(--accent-pressed)]/20 to-transparent blur-3xl"
               />
               <div className="relative">
                 <div className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-brand">
@@ -50,7 +50,7 @@ export function Prizes() {
                     key={item}
                     className="flex items-center gap-3 rounded-2xl border border-border bg-surface-muted px-4 py-3"
                   >
-                    <span className="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                    <span className="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-brand-soft text-ink">
                       <Spark />
                     </span>
                     <span className="text-[15px] font-medium text-ink">{item}</span>

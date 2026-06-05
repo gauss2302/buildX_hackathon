@@ -37,7 +37,7 @@ function TrackCard({
       {primary && (
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-gradient-to-br from-indigo-400/20 via-violet-400/20 to-amber-400/20 blur-3xl"
+          className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-gradient-to-br from-[color:var(--accent)]/30 via-[color:var(--accent-pressed)]/20 to-transparent blur-3xl"
         />
       )}
       <div className="relative flex flex-1 flex-col">
@@ -90,9 +90,11 @@ function TrackCard({
               <Arrow />
             </ButtonLink>
           )}
-          <p className="text-center text-xs text-muted">
-            Откроется в новой вкладке (Google Forms)
-          </p>
+          {!unavailable && (
+            <p className="text-center text-xs text-muted">
+              Откроется в новой вкладке (Google Forms)
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -152,7 +154,7 @@ export function Registration() {
         <RevealItem className="mt-8">
           <div className="rounded-2xl border border-border bg-white p-5 sm:p-6">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
-              <span className="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+              <span className="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-brand-soft text-ink">
                 <Info />
               </span>
               <div className="text-pretty text-sm leading-relaxed text-ink/80 sm:text-[15px]">

@@ -34,7 +34,7 @@ export function Hero() {
           className="text-balance mt-7 text-5xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-[88px]"
         >
           Хакатон{" "}
-          <span className="bg-gradient-to-r from-indigo-600 via-violet-500 to-amber-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[color:var(--accent)] via-[color:var(--accent-pressed)] to-[color:var(--text-primary)] bg-clip-text text-transparent">
             Build<AnimatedX />
           </span>
         </motion.h1>
