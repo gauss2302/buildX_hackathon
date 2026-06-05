@@ -1,0 +1,61 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: buildx-hackathon-web:latest
+    container_name: buildx-web-prod
+    env_file:
+      - path: .env.production
+        required: true
+    environment:
+      NODE_ENV: production
+    expose:
+      - "3000"
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - buildx-prod-net
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: buildx-nginx-prod
+    depends_on:
+      - web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/prod.conf:/etc/nginx/nginx.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - certbot_webroot:/var/www/certbot:ro
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - buildx-prod-net
+
+  certbot:
+    image: certbot/certbot:latest
+    container_name: buildx-certbot
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - certbot_webroot:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot --quiet; sleep 12h & wait $${!}; done'"
+    restart: unless-stopped
+    networks:
+      - buildx-prod-net
+
+volumes:
+  certbot_webroot:
+
+networks:
+  buildx-prod-net:
+    driver: bridge
