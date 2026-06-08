@@ -33,7 +33,7 @@ function TrackCard({
     : "bg-surface-muted text-muted border-border";
 
   return (
-    <div className={`relative flex h-full flex-col rounded-3xl border p-7 sm:p-9 ${surface}`}>
+    <div className={`relative flex h-full flex-col overflow-hidden rounded-3xl border p-7 sm:p-9 ${surface}`}>
       {primary && (
         <div
           aria-hidden="true"

@@ -21,9 +21,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.21, 0.6, 0.35, 1] }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-muted backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            Внутренний корпоративный хакатон
+          <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-border bg-white/70 px-2.5 py-1.5 text-[10px] font-medium uppercase tracking-[0.12em] text-muted backdrop-blur-sm sm:px-3 sm:text-xs sm:tracking-[0.16em]">
+            <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+            <span className="truncate">Внутренний корпоративный хакатон</span>
           </div>
         </motion.div>
 
@@ -31,7 +31,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.08, ease: [0.21, 0.6, 0.35, 1] }}
-          className="text-balance mt-7 text-5xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-[88px]"
+          className="text-balance mt-7 text-[2.5rem] font-semibold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-[88px]"
         >
           Хакатон{" "}
           <span className="bg-gradient-to-r from-[color:var(--accent)] via-[color:var(--accent-pressed)] to-[color:var(--text-primary)] bg-clip-text text-transparent">
