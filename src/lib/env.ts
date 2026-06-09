@@ -14,5 +14,4 @@ function sanitizeFormUrl(raw: string | undefined): string {
 
 export const formUrls = {
   team: sanitizeFormUrl(process.env.NEXT_PUBLIC_FORM_TEAM_URL),
-  solo: sanitizeFormUrl(process.env.NEXT_PUBLIC_FORM_SOLO_URL),
 } as const;

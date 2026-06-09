@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { nav } from "@/lib/data";
 import { ButtonLink } from "@/components/ui/Button";
 
@@ -35,11 +36,17 @@ export function Header() {
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
         <a
           href="#top"
-          className="flex items-center gap-2 font-semibold tracking-tight text-ink"
+          className="flex items-center"
           aria-label="BuildX"
         >
-          <Logo />
-          <span>BuildX</span>
+          <Image
+            src="/buildx.jpg"
+            alt="BuildX"
+            width={935}
+            height={244}
+            priority
+            className="h-7 w-auto"
+          />
         </a>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Основная навигация">
@@ -102,29 +109,6 @@ export function Header() {
         </nav>
       </div>
     </header>
-  );
-}
-
-function Logo() {
-  return (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 28 28"
-      fill="none"
-      aria-hidden="true"
-      className="text-ink"
-    >
-      <rect width="28" height="28" rx="8" fill="currentColor" />
-      <path
-        d="M8.5 8.5h4.2c2.2 0 3.6 1.1 3.6 2.9 0 1.2-.7 2.1-1.8 2.5 1.4.3 2.3 1.3 2.3 2.7 0 2-1.5 3.1-3.9 3.1H8.5V8.5Zm4 4.6c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.8v2.6h1.8Zm.2 4.6c1.1 0 1.8-.5 1.8-1.4 0-.9-.7-1.4-1.8-1.4h-2v2.8h2Z"
-        fill="white"
-      />
-      <path
-        d="M18 8.5h2.8l1.6 4 1.6-4H27l-3 6.6 3 6.6h-2.8l-1.6-4-1.6 4H18l3-6.6-3-6.6Z"
-        fill="white"
-      />
-    </svg>
   );
 }
 

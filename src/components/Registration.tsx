@@ -103,7 +103,6 @@ function TrackCard({
 
 export function Registration() {
   const teamUnavailable = !formUrls.team;
-  const soloUnavailable = !formUrls.solo;
 
   return (
     <Section id="registration" className="bg-surface-muted">
@@ -111,15 +110,15 @@ export function Registration() {
         <RevealItem>
           <SectionHeader
             eyebrow="Регистрация"
-            title="Выберите дорожку"
-            lead="Капитан подаёт заявку за команду. Если команды нет — оставьте контакт и роль, Оргкомитет соберёт пул и поможет найти своих."
+            title="Зарегистрируйте команду"
+            lead="Капитан подаёт заявку за команду целиком. К участию допускаются только готовые команды."
           />
         </RevealItem>
 
         <RevealItem className="mt-12">
-          <div className="grid gap-5 lg:grid-cols-2">
+          <div className="mx-auto max-w-2xl">
             <TrackCard
-              badge="A · У нас есть команда"
+              badge="У нас есть команда"
               title="Зарегистрировать команду"
               body="Капитан заполняет заявку, указывает направление и состав (3–5 человек)."
               bullets={[
@@ -132,21 +131,6 @@ export function Registration() {
               ctaLabel="Открыть форму регистрации"
               primary
               unavailable={teamUnavailable}
-            />
-            <TrackCard
-              badge="B · Я без команды"
-              title="Ищу команду"
-              body="Оставьте контакт, роль и интересные направления — попадёте в общий пул, где участники находят друг друга."
-              bullets={[
-                "ФИО, подразделение, email, Telegram",
-                "Роль / специализация и навыки",
-                "Интересные направления из 6",
-                "Пара слов о себе (опционально)",
-              ]}
-              href={formUrls.solo}
-              ctaLabel="Открыть форму поиска"
-              primary={false}
-              unavailable={soloUnavailable}
             />
           </div>
         </RevealItem>

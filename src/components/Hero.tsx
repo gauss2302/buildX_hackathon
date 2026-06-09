@@ -79,9 +79,6 @@ export function Hero() {
             Зарегистрировать команду
             <Arrow />
           </ButtonLink>
-          <ButtonLink href="#registration" size="lg" variant="secondary">
-            Ищу команду
-          </ButtonLink>
         </motion.div>
 
         <motion.div
